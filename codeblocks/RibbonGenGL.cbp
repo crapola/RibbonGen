@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RibbonGenGL" />
+		<Option execution_dir=".." />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../bin/Debug/RibbonGenGL" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../bin/obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="../bin/Release/RibbonGenGL" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../bin/obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc -static-libstdc++" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-DGLEW_STATIC" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDL2main" />
+			<Add library="SDL2.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add library="opengl32" />
+		</Linker>
+		<Unit filename="../shaders/ribbon_F.glsl">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../shaders/ribbon_V.glsl">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../src/afont.cpp" />
+		<Unit filename="../src/app.cpp" />
+		<Unit filename="../src/app.h" />
+		<Unit filename="../src/app_buttons.cpp" />
+		<Unit filename="../src/checkglerrors.cpp" />
+		<Unit filename="../src/checkglerrors.h" />
+		<Unit filename="../src/chrono.cpp" />
+		<Unit filename="../src/chrono.h" />
+		<Unit filename="../src/debuglog.hpp" />
+		<Unit filename="../src/displaysettings.hpp" />
+		<Unit filename="../src/genloop.hpp" />
+		<Unit filename="../src/glew/glew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/interface.cpp" />
+		<Unit filename="../src/interface.h" />
+		<Unit filename="../src/interface_controls.cpp" />
+		<Unit filename="../src/loadshaders.cpp" />
+		<Unit filename="../src/loadshaders.h" />
+		<Unit filename="../src/loadtexture.cpp" />
+		<Unit filename="../src/loadtexture.h" />
+		<Unit filename="../src/main.cpp" />
+		<Unit filename="../src/quadstrip.hpp" />
+		<Unit filename="../src/ribbon.cpp" />
+		<Unit filename="../src/ribbon.h" />
+		<Unit filename="../src/serie.hpp" />
+		<Unit filename="../src/simpletext.cpp" />
+		<Unit filename="../src/simpletext.h" />
+		<Unit filename="../src/simpletext_shaders.cpp" />
+		<Unit filename="../src/simpletext_text.cpp" />
+		<Unit filename="../src/svector.hpp" />
+		<Unit filename="../src/window.cpp" />
+		<Unit filename="../src/window.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

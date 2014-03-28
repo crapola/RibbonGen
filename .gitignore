@@ -1,0 +1,8 @@
+assets/
+bin/
+*.depend
+*.layout
+*.out
+*.bat
+*.bmp
+glew.c
