@@ -4,5 +4,4 @@ bin/
 *.layout
 *.out
 *.bat
-*.bmp
 glew.c
