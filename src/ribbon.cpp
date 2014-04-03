@@ -97,9 +97,13 @@ void Ribbon::Build()
 	GLfloat x=0,y=0,z=0,r,g,b,a,col,angle=0.f;
 	// Random parameters
 	std::array<float,NC*3> coefs;
-	std::fill(coefs.begin(),coefs.end(),dr(_generator));
-	//std::fill(coefs.begin(),coefs.end(),1);
 
+	//std::fill(coefs.begin(),coefs.end(),1);
+	for (auto& e:coefs)
+	{
+		e=dr(_generator);
+		std::cout<<e<<" ";
+	}
 	// Leading edge
 	auto edgefun=[&coefs](float y) -> std::tuple<float,float,float>
 	{
@@ -129,7 +133,7 @@ void Ribbon::Build()
 		z=std::get<2>(plop);
 		// Rotation around leading edge
 		angle+=ANGLESTEP;
-		float directx=cos(angle);
+		float directx=-cos(angle);
 		float directy=sin(angle);
 
 		for (int xx=0; xx<=RIBW; ++xx)
