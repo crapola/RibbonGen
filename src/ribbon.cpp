@@ -19,7 +19,7 @@
 
 // Dimensions of ribbon grid
 #define RIBW 16  	// Span
-#define RIBH 256	// Edge
+#define RIBH 512	// Edge
 
 #define RATIO 800.0f/600.0f
 
@@ -102,7 +102,6 @@ void Ribbon::Build()
 	for (auto& e:coefs)
 	{
 		e=dr(_generator);
-		std::cout<<e<<" ";
 	}
 	// Leading edge
 	auto edgefun=[&coefs](float y) -> std::tuple<float,float,float>
@@ -131,11 +130,10 @@ void Ribbon::Build()
 		x=std::get<0>(plop);
 		y=std::get<1>(plop);
 		z=std::get<2>(plop);
-		// Rotation around leading edge
+		// Extrude
 		angle+=ANGLESTEP;
-		float directx=-cos(angle);
-		float directy=sin(angle);
-
+		float directx=copysign(0.015625,-x);
+		float directy=copysign(0.015625,-y);
 		for (int xx=0; xx<=RIBW; ++xx)
 		{
 			col=colorfun(xx);
