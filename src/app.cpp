@@ -1,4 +1,5 @@
 #include "app.h"
+#include "checkglerrors.h"
 #include "debuglog.hpp"
 #include <iostream>
 #include <GL/glew.h>
@@ -71,7 +72,7 @@ void App::ProcessEvent(const SDL_Event& p_event)
 
 void App::Render()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	_ribbon.Render();
 	_gui.Render();
 }
@@ -90,7 +91,12 @@ void App::Init()
 	// Blending
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_DEPTH_TEST);
+	glDepthMask(GL_TRUE);
+	glDepthFunc(GL_LEQUAL);
+	glDepthRangef(0.f,1.f);
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
+	CheckGLErrors("App");
 	// Interface
 	_gui.Init();
 	int menux=_displaySettings.width-96,

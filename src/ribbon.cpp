@@ -94,7 +94,7 @@ void Ribbon::Build()
 	std::uniform_real_distribution<float> dr;
 
 	const int NC=16;
-	GLfloat x=0,y=0,z=0,r,g,b,a,col,angle=0.f;
+	GLfloat x=0,y=0,z=0,r,g,b,a,col;
 	// Random parameters
 	std::array<float,NC*3> coefs;
 
@@ -131,9 +131,11 @@ void Ribbon::Build()
 		y=std::get<1>(plop);
 		z=std::get<2>(plop);
 		// Extrude
-		angle+=ANGLESTEP;
-		float directx=copysign(0.015625,-x);
-		float directy=copysign(0.015625,-y);
+
+		float len=sqrt(x*x+y*y+z*z)*25.f;
+		float directx=-x/len;
+		float directy=-y/len;
+		float directz=-z/len;
 		for (int xx=0; xx<=RIBW; ++xx)
 		{
 			col=colorfun(xx);
@@ -143,7 +145,7 @@ void Ribbon::Build()
 			a=col;
 			_verts.push_back(Vertex {SCALE*(directx*xx+x),
 									 SCALE*(directy*xx+y),
-									 SCALE*(z),
+									 SCALE*(directz*xx+z),
 			{r,g,b,a}
 									});
 		}
