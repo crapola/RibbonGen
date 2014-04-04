@@ -30,7 +30,7 @@ mat4 rotate(float x,float y)
 
 void main()
 {
-	vec4 offset=vec4(pan,15,0);
+	vec4 offset=vec4(pan,15,10);
 	gl_Position=pers*( offset + rotate(angles.x,angles.y)*zoom*vec4(pos+vec3(0,0,0),0) );
 	color_frag=color;
 }

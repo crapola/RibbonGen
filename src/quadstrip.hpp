@@ -24,13 +24,14 @@ void QuadStrip2D(std::vector<T>& out_vector,T w,T h,int numquads)
 		x1=i*w;
 		x2=x1+w;
 		out_vector.push_back(x1);
-		out_vector.push_back(h);
+		out_vector.push_back(0);
 		out_vector.push_back(x1);
-		out_vector.push_back(0);
-		out_vector.push_back(x2);
 		out_vector.push_back(h);
 		out_vector.push_back(x2);
 		out_vector.push_back(0);
+		out_vector.push_back(x2);
+		out_vector.push_back(h);
+
 	}
 }
 

@@ -88,13 +88,14 @@ bool App::Update()
 
 void App::Init()
 {
+	glEnable(GL_CULL_FACE);
 	// Blending
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE);
 	glDepthFunc(GL_LEQUAL);
-	glDepthRangef(0.f,1.f);
+	//glDepthRangef(0.f,1.f);
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
 	CheckGLErrors("App");
 	// Interface

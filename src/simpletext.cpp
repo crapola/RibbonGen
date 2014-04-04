@@ -127,11 +127,11 @@ bool SimpleText::CreateBuffers()
 	for (size_t i=0; i<_MAX_CHARS; ++i)
 	{
 		indices.push_back(i*4+0);
-		indices.push_back(i*4+1);
 		indices.push_back(i*4+2);
 		indices.push_back(i*4+1);
+		indices.push_back(i*4+1);
+		indices.push_back(i*4+2);
 		indices.push_back(i*4+3);
-		indices.push_back(i*4+2);
 	}
 	glGenBuffers(1,&_objects[IBO]);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,_objects[IBO]);
