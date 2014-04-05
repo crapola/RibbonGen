@@ -179,8 +179,13 @@ void Ribbon::Render() const
 	GLint zob=glGetUniformLocation(_program,"zoom");
 	glUniform2f(v,_rotx,_roty);
 	glUniform2f(pu,_panx,_pany);
-	glUniform1f(zob, 1.f/powf(2,_zoomLevel));
+	glUniform1f(zob,powf(2.f,_zoomLevel));
+	glCullFace(GL_FRONT);
 	glDrawElements(GL_TRIANGLES,_indices.size(),GL_UNSIGNED_INT,0);
+	glCullFace(GL_BACK);
+	//glDepthFunc(GL_ALWAYS);
+	glDrawElements(GL_TRIANGLES,_indices.size(),GL_UNSIGNED_INT,0);
+	//glDepthFunc(GL_LEQUAL);
 	glBindVertexArray(0);
 }
 

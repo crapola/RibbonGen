@@ -4,7 +4,7 @@
 template<int N>
 constexpr inline float SerieCos(float x,float c[])
 {
-	return ( c[N-1]*cos( c[N-1]+x*N ) )+SerieCos<N-1>(x,c);
+	return ( c[N-1]*cos( x*N ) )+SerieCos<N-1>(x,c);
 }
 
 template<>

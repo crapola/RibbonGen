@@ -51,6 +51,12 @@
 			<Add library="dxguid" />
 			<Add library="opengl32" />
 		</Linker>
+		<Unit filename="../shaders/rec_F.glsl">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../shaders/rec_V.glsl">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="../shaders/ribbon_F.glsl">
 			<Option target="Debug" />
 		</Unit>

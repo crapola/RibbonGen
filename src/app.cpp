@@ -67,6 +67,20 @@ void App::ProcessEvent(const SDL_Event& p_event)
 					break;
 			}
 			break;
+		case SDL_KEYDOWN:
+			if (p_event.key.keysym.sym==SDLK_UP)
+			{
+				_ribbon.Zoom(1.0f);
+			}
+			if (p_event.key.keysym.sym==SDLK_DOWN)
+			{
+				_ribbon.Zoom(-1.0f);
+			}
+			if (p_event.key.keysym.sym==SDLK_RIGHT)
+			{
+				ButtonNewCurve();
+			}
+			break;
 	}
 }
 
@@ -88,7 +102,7 @@ bool App::Update()
 
 void App::Init()
 {
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	// Blending
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
