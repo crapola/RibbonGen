@@ -7,8 +7,8 @@ out vec4 color_frag;
 
 const mat4 pers=mat4(1,0,0,0,
 					 0,1.33,0,0,// 800/600 ratio
-					 0,0,1,1,
-					 0,0,0,0);
+					 0,0,1,1,// 0.1 zplane
+					 0,0,0,1);
 
 // Explicit locations only work on GL 4.3+
 layout(location=0) uniform vec2 angles;
@@ -30,7 +30,7 @@ mat4 rotate(float x,float y)
 
 void main()
 {
-	vec4 offset=vec4(pan,15,10);
-	gl_Position=pers*( offset + rotate(angles.x,angles.y)*zoom*vec4(pos+vec3(0,0,0),0) );
+	vec4 offset=vec4(pan,zoom,0);
+	gl_Position=pers*( offset + rotate(angles.x,angles.y)*vec4(pos+vec3(0,0,0),1) );
 	color_frag=color;
 }
