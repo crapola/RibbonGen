@@ -49,7 +49,7 @@ void App::ButtonSave()
 
 void App::ButtonYes()
 {
-	const unsigned short RENDER_SIZE=512;
+	const unsigned short RENDER_SIZE=2048;
 	std::string filename;
 	filename=_ribbon.Save(RENDER_SIZE,RENDER_SIZE);
 	_gui.ToggleVisibility(ControlName::MESSAGE);

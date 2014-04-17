@@ -21,15 +21,15 @@ Interface::Interface():_ticker(),
 {
 	for (unsigned int i=0; i<MAX_CONTROLS*4-8; i+=8)
 	{
-		_rectangleColors[i]=0.05f;
-		_rectangleColors[i+1]=0.2f;
-		_rectangleColors[i+2]=0.5f;
-		_rectangleColors[i+3]=0.25f;
+		_rectangleColors[i+4]=0.05f;
+		_rectangleColors[i+5]=0.2f;
+		_rectangleColors[i+6]=0.5f;
+		_rectangleColors[i+7]=0.25f;
 
-		_rectangleColors[i+4]=0.4f;
-		_rectangleColors[i+5]=0.8f;
-		_rectangleColors[i+6]=1.0f;
-		_rectangleColors[i+7]=1.0f;
+		_rectangleColors[i+0]=0.4f;
+		_rectangleColors[i+1]=0.8f;
+		_rectangleColors[i+2]=1.0f;
+		_rectangleColors[i+3]=1.0f;
 	}
 	QuadStrip2D<GLfloat>(_rectangle,1,1,1);
 	for (int i=0; i<10; ++i)

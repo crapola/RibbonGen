@@ -131,8 +131,7 @@ void Ribbon::Build()
 		y=std::get<1>(plop);
 		z=std::get<2>(plop);
 		// Extrude
-
-		float len=sqrt(x*x+y*y+z*z)*25.f;
+		float len=sqrt(x*x+y*y+z*z)*50.0f;
 		float directx=-x/len;
 		float directy=-y/len;
 		float directz=-z/len;
@@ -140,7 +139,7 @@ void Ribbon::Build()
 		{
 			col=colorfun(xx);
 			r=1.0f-float(RIBW-xx)/float(RIBW);
-			g=r;//col*0.8;
+			g=r*col;//col*0.8;
 			b=1;//col*0.0125;
 			a=col;
 			_verts.push_back(Vertex {SCALE*(directx*xx+x),
@@ -233,8 +232,7 @@ std::string Ribbon::Save(unsigned short p_render_w,
 	glViewport(0,0,800,600);
 	// Save to file
 	glReadBuffer(GL_COLOR_ATTACHMENT0);
-	std::vector<uint_fast8_t> pixels;
-	pixels.resize(p_render_w*p_render_h*4);
+	std::vector<uint8_t> pixels(p_render_w*p_render_h*4);
 	glReadPixels(0,0,p_render_w,p_render_h,GL_RGBA,GL_UNSIGNED_BYTE,&pixels[0]);
 	CheckGLErrors("read");
 	SDL_Surface* image=SDL_CreateRGBSurfaceFrom(&pixels[0],
