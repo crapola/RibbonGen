@@ -48,7 +48,7 @@ void App::ProcessEvent(const SDL_Event& p_event)
 			}
 			if (ms&SDL_BUTTON(3)) // Right - panning.
 			{
-				const float sens=10.0f;
+				const float sens=25.0f;
 				_ribbon.Pan(-rmx/sens,rmy/sens);
 			}
 			break;

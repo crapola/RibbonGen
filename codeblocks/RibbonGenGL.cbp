@@ -16,6 +16,7 @@
 				<Compiler>
 					<Add option="-pg" />
 					<Add option="-g" />
+					<Add directory="src" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
@@ -31,6 +32,7 @@
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-Os" />
 					<Add option="-DNDEBUG" />
+					<Add directory="src" />
 				</Compiler>
 				<Linker>
 					<Add option="-static-libgcc -static-libstdc++" />
@@ -71,6 +73,8 @@
 		<Unit filename="../src/checkglerrors.h" />
 		<Unit filename="../src/chrono.cpp" />
 		<Unit filename="../src/chrono.h" />
+		<Unit filename="../src/context.cpp" />
+		<Unit filename="../src/context.h" />
 		<Unit filename="../src/debuglog.hpp" />
 		<Unit filename="../src/displaysettings.hpp" />
 		<Unit filename="../src/genloop.hpp" />
