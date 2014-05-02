@@ -1,14 +1,13 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 #include <SDL2/SDL.h>
-#include "displaysettings.hpp"
 
 // SDL window and initialization.
 
 class Window
 {
 public:
-	Window(const DisplaySettings& settings);
+	Window(const char* title,int width,int height,Uint32 flags=0);
 	~Window();
 	Window(const Window&)=delete;
 	Window& operator=(const Window&)=delete;

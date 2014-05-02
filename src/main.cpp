@@ -23,7 +23,7 @@ int main(int,char**)
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,	5);
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1);*/
 		DisplaySettings settings {800,600,"RibbonGen"};
-		Window wind(settings);
+		Window wind("RibbonGen",800,600,SDL_WINDOW_OPENGL|SDL_WINDOW_RESIZABLE);
 		SDL_Window* w=wind();
 		Context context(w);
 		App app(w,settings);

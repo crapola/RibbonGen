@@ -19,7 +19,7 @@
 
 // Dimensions of ribbon grid
 #define RIBW 16  	// Span
-#define RIBH 512	// Edge
+#define RIBH 1024	// Edge
 
 #define RATIO 800.0f/600.0f
 
