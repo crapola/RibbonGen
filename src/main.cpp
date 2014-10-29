@@ -36,7 +36,7 @@ int main(int,char**)
 	catch (std::runtime_error e)
 	{
 		std::cerr<<"Runtime error!\n"<<e.what()<<std::endl;
-		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,"Error",e.what(),0);// bug
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,"Error",e.what(),0);// bugged
 		returnCode=EXIT_FAILURE;
 	}
 	std::cout<<"The program exited normally ("<<returnCode<<")."<<std::endl;

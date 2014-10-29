@@ -28,7 +28,8 @@ void App::ProcessEvent(const SDL_Event& p_event)
 		default:
 			break;
 		case SDL_MOUSEBUTTONUP:
-			_ribbon.Dampen(0.9375f); // Let it roll.
+			//_ribbon.Dampen(0.9375f); // Let it roll.
+			_ribbon.Dampen(0.984375f);
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 		{

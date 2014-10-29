@@ -5,14 +5,14 @@
 		<Option title="RibbonGenGL" />
 		<Option execution_dir=".." />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="gnu_gcc_compiler_64_bits" />
 		<Build>
 			<Target title="Debug">
 				<Option output="../bin/Debug/RibbonGenGL" prefix_auto="1" extension_auto="1" />
 				<Option working_dir=".." />
 				<Option object_output="../bin/obj/Debug/" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="gnu_gcc_compiler_64_bits" />
 				<Compiler>
 					<Add option="-pg" />
 					<Add option="-g" />
@@ -27,7 +27,7 @@
 				<Option working_dir=".." />
 				<Option object_output="../bin/obj/Release/" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="gnu_gcc_compiler_64_bits" />
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-Os" />
@@ -40,8 +40,10 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-DGLEW_STATIC" />
+			<Add directory="$(#sdl64.include)" />
 		</Compiler>
 		<Linker>
 			<Add library="mingw32" />
@@ -52,6 +54,7 @@
 			<Add library="winmm" />
 			<Add library="dxguid" />
 			<Add library="opengl32" />
+			<Add directory="$(#sdl64.lib)" />
 		</Linker>
 		<Unit filename="../shaders/rec_F.glsl">
 			<Option target="Debug" />
@@ -64,6 +67,10 @@
 		</Unit>
 		<Unit filename="../shaders/ribbon_V.glsl">
 			<Option target="Debug" />
+		</Unit>
+		<Unit filename="../shaders/txt_F.glsl" />
+		<Unit filename="../shaders/txt_V.glsl">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../src/afont.cpp" />
 		<Unit filename="../src/app.cpp" />

@@ -10,7 +10,7 @@ layout(location=3) in int selectedin;
 
 out vec4 color_frag;
 
-layout(location=0) uniform float timer;
+/*layout(location=0)*/ uniform float timer;
 
 void main()
 {

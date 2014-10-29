@@ -3,7 +3,7 @@
 in vec2 uv_frag;
 out vec4 color;
 
-layout(location=0) uniform sampler2D tex;
+/*layout(location=0)*/ uniform sampler2D tex;
 
 void main()
 {

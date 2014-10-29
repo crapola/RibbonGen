@@ -10,7 +10,7 @@ template <class A,class T_swapper>
 void Loopy(A& a,T_swapper& swapper)
 {
 	Chrono GCHRONO;
-	Sint32 ticksPerFrame=16;
+	Sint32 ticksPerFrame=15;
 	Sint32 acc=0;
 	Uint32 ticksNow=0,ticksPrev=SDL_GetTicks(),delta=0;
 	bool ok=true;
@@ -55,7 +55,7 @@ void Loopy(A& a,T_swapper& swapper)
 			swapper();
 		}
 		else
-			SDL_Delay(1);
+			SDL_Delay(0);
 	}
 }
 #endif // GENLOOP_HPP_INCLUDED
