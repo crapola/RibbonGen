@@ -4,7 +4,7 @@
 #ifndef NDEBUG
 #include <iostream>
 #define DOUT(x) std::cout<<x<<'\n';
-#define DERR(x) std::cerr<<"@ "__FILE__<<", line "<<__LINE__<<"\n\t"<<__PRETTY_FUNCTION__<<":\n\t"<<"Error: "<<x<<'\n';
+#define DERR(x) std::cerr<<"@ "<<__FILE__<<", line "<<__LINE__<<"\n\t"<<__PRETTY_FUNCTION__<<":\n\t"<<"Error: "<<x<<'\n';
 #else
 #define DOUT(x)
 #define DERR(x)

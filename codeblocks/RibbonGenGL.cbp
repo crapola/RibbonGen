@@ -5,14 +5,14 @@
 		<Option title="RibbonGenGL" />
 		<Option execution_dir=".." />
 		<Option pch_mode="2" />
-		<Option compiler="gnu_gcc_compiler_64_bits" />
+		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
 				<Option output="../bin/Debug/RibbonGenGL" prefix_auto="1" extension_auto="1" />
 				<Option working_dir=".." />
 				<Option object_output="../bin/obj/Debug/" />
 				<Option type="1" />
-				<Option compiler="gnu_gcc_compiler_64_bits" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-pg" />
 					<Add option="-g" />
@@ -27,7 +27,7 @@
 				<Option working_dir=".." />
 				<Option object_output="../bin/obj/Release/" />
 				<Option type="0" />
-				<Option compiler="gnu_gcc_compiler_64_bits" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-Os" />
@@ -40,21 +40,17 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
-			<Add option="-Wall" />
+			<Add option="-pg" />
+			<Add option="-g" />
 			<Add option="-DGLEW_STATIC" />
-			<Add directory="$(#sdl64.include)" />
 		</Compiler>
 		<Linker>
+			<Add option="-pg -lgmon" />
 			<Add library="mingw32" />
 			<Add library="SDL2main" />
-			<Add library="SDL2.dll" />
-			<Add library="user32" />
-			<Add library="gdi32" />
-			<Add library="winmm" />
-			<Add library="dxguid" />
+			<Add library="SDL2" />
+			<Add library="glew32" />
 			<Add library="opengl32" />
-			<Add directory="$(#sdl64.lib)" />
 		</Linker>
 		<Unit filename="../shaders/rec_F.glsl">
 			<Option target="Debug" />
@@ -85,9 +81,6 @@
 		<Unit filename="../src/debuglog.hpp" />
 		<Unit filename="../src/displaysettings.hpp" />
 		<Unit filename="../src/genloop.hpp" />
-		<Unit filename="../src/glew/glew.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../src/interface.cpp" />
 		<Unit filename="../src/interface.h" />
 		<Unit filename="../src/interface_controls.cpp" />
